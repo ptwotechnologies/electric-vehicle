@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
   <title>Rentaly - Multipurpose Vehicle Car Rental Website Template</title>
   <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
@@ -9,20 +8,205 @@
   <meta content="Rentaly - Multipurpose Vehicle Car Rental Website Template" name="description">
   <meta content="" name="keywords">
   <meta content="" name="author">
-  <!-- CSS Files
-    ================================================== -->
+  <!-- CSS Files -->
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
   <link href="css/mdb.min.css" rel="stylesheet" type="text/css" id="mdb">
   <link href="css/plugins.css" rel="stylesheet" type="text/css">
   <link href="css/style.css" rel="stylesheet" type="text/css">
   <link href="css/coloring.css" rel="stylesheet" type="text/css">
-  <!-- color scheme -->
   <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      background-color: #f8fafc;
+    }
+    .de-box {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      margin-bottom: 50px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .de-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+    .section-heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: #1a1a1a;
+      position: relative;
+      text-align: center;
+    }
+    .section-heading::after {
+      content: '';
+      width: 50px;
+      height: 3px;
+      background: #28a745;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .pricing-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch; /* Ensures cards stretch to equal height */
+    }
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 0.5s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%; /* Ensures cards take full height of container */
+    }
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+    .pricing-card h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 15px;
+    }
+    .pricing-card .price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #28a745;
+      margin-bottom: 20px;
+    }
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+      flex-grow: 1; /* Ensures list takes available space */
+    }
+    .pricing-card ul li {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+    }
+    .pricing-card ul li::before {
+      content: '✔';
+      color: #28a745;
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+    .pricing-card .ideal-for {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95rem;
+      margin-top: 15px;
+      margin-bottom: 20px;
+    }
+    .btn-main {
+      background: linear-gradient(135deg, #28a745, #34c759);
+      color: #fff;
+      padding: 14px 35px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: auto; /* Pushes button to bottom of card */
+    }
+    .btn-main:hover {
+      background: linear-gradient(135deg, #218838, #2db84c);
+      transform: scale(1.05);
+    }
+    .financing-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      margin-bottom: 50px;
+      animation: fadeIn 0.5s ease-in-out;
+      text-align: center;
+    }
+    .financing-card h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+    }
+    .financing-card ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    .financing-card ul li {
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    #section-call-to-action {
+      background: linear-gradient(135deg, #28a745, #1e7e34);
+      padding: 60px 0;
+      margin-bottom: 0;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    #section-call-to-action h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    #section-call-to-action p {
+      color: #f0f0f0;
+      font-size: 1.1rem;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 25px;
+    }
+    .cta-buttons a {
+      background: linear-gradient(135deg, #28a745, #34c759);
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .cta-buttons a:hover {
+      background: linear-gradient(135deg, #218838, #2db84c);
+      transform: scale(1.05);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #555;
+    }
+  </style>
 </head>
-
 <body>
   <div id="wrapper">
-
     <!-- page preloader begin -->
     <div id="de-preloader"></div>
     <!-- page preloader close -->
@@ -33,12 +217,11 @@
         <div class="container">
           <div class="topbar-left xs-hide">
             <div class="topbar-widget">
-              <div class="topbar-widget"><a href="#"><i class="fa fa-phone"></i>+91 8766270884</a></div>
+              <div class="topbar-widget"><a href="#"><i class="fa fa-phone"></i>+91-XXXXXXXXXX</a></div>
               <div class="topbar-widget"><a href="#"><i class="fa fa-envelope"></i>contact@evehicle.com</a></div>
               <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>Mon - Fri 08.00 - 18.00</a></div>
             </div>
           </div>
-
           <div class="topbar-right">
             <div class="social-icons">
               <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
@@ -66,89 +249,11 @@
               </div>
               <div class="de-flex-col header-col-mid">
                 <ul id="mainmenu">
-                  <li><a class="menu-item" href="#">Home</a>
-
-                  </li>
-                  <!-- <li><a class="menu-item" href="pricing.html">Cars</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="pricing.html">Cars List 1</a></li>
-                                            <li><a class="menu-item" href="02_dark-pricing.html">Cars List 1 Dark</a></li>
-                                            <li><a class="menu-item" href="cars-list.html">Cars List 2</a></li>
-                                            <li><a class="menu-item" href="02_dark-cars-list.html">Cars List 2 Dark</a></li>
-                                            <li><a class="menu-item" href="car-single.html">Cars Single</a></li>
-                                            <li><a class="menu-item" href="02_dark-car-single.html">Cars Single Dark</a></li>
-                                        </ul>
-                                    </li> -->
-                  <li>
-                    <a class="menu-item" href="about.html">About</a>
-                  </li>
-                  <li>
-                    <a class="menu-item" href="booking.html">Service</a>
-                  </li>
-                  <li>
-                    <a class="menu-item" href="pricing.html">Pricing</a>
-                  </li>
-                  <li>
-                    <a class="menu-item" href="contact.html">Contact</a>
-                  </li>
-                  <!-- <li><a class="menu-item" href="quick-booking.html">Booking</a>
-                                        <ul>
-                                            <li><a class="menu-item new" href="quick-booking.html">Quick Booking</a></li>
-                                            <li><a class="menu-item" href="booking.html">Booking</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="account-dashboard.html">My Account</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="account-dashboard.html">Dashboard</a></li>
-                                            <li><a class="menu-item" href="account-profile.html">My Profile</a></li>
-                                            <li><a class="menu-item" href="account-booking.html">My Orders</a></li>
-                                            <li><a class="menu-item" href="account-favorite.html">My Favorite Cars</a></li>
-                                        </ul>
-                                    </li> -->
-                  <!-- <li><a class="menu-item" href="#">Pages</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="about.html">About Us</a></li>
-                                            <li><a class="menu-item" href="contact.html">Contact</a></li>
-                                            <li><a class="menu-item" href="login.html">Login</a></li>
-                                            <li><a class="menu-item" href="register.html">Register</a></li>
-                                            <li><a class="menu-item" href="404.html">Page 404</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="#">News</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="news-standart-right-sidebar.html">News Standard</a>
-                                                <ul>
-                                                    <li><a class="menu-item" href="news-standart-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a class="menu-item" href="news-standart-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a class="menu-item" href="news-standart-no-sidebar.html">No Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a class="menu-item" href="news-grid-right-sidebar.html">News Grid</a>
-                                                <ul>
-                                                    <li><a class="menu-item" href="news-grid-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a class="menu-item" href="news-grid-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a class="menu-item" href="news-grid-no-sidebar.html">No Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="#">Elements</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="preloader.html">Preloader</a></li>
-                                            <li><a class="menu-item" href="icon-boxes.html">Icon Boxes</a></li>
-                                            <li><a class="menu-item" href="badge.html">Badge</a></li>
-                                            <li><a class="menu-item" href="counters.html">Counters</a></li>
-                                            <li><a class="menu-item" href="gallery-popup.html">Gallery Popup</a></li>
-                                            <li><a class="menu-item" href="icons-elegant.html">Icons Elegant</a></li>
-                                            <li><a class="menu-item" href="icons-etline.html">Icons Etline</a></li>
-                                            <li><a class="menu-item" href="icons-font-awesome.html">Icons Font Awesome</a></li>
-                                            <li><a class="menu-item" href="map.html">Map</a></li>
-                                            <li><a class="menu-item" href="modal.html">Modal</a></li>
-                                            <li><a class="menu-item" href="popover.html">Popover</a></li>
-                                            <li><a class="menu-item" href="tabs.html">Tabs</a></li>
-                                            <li><a class="menu-item" href="tooltips.html">Tooltips</a></li>
-                                        </ul>
-                                    </li> -->
+                  <li><a class="menu-item" href="index.html">Home</a></li>
+                  <li><a class="menu-item" href="about.html">About</a></li>
+                  <li><a class="menu-item" href="booking.html">Service</a></li>
+                  <li><a class="menu-item" href="pricing.html">Pricing</a></li>
+                  <li><a class="menu-item" href="contact.html">Contact</a></li>
                 </ul>
               </div>
               <div class="de-flex-col">
@@ -163,9 +268,8 @@
       </div>
     </header>
     <!-- header close -->
-    <!-- content begin -->
 
-    <!-- section begin -->
+    <!-- content begin -->
     <section id="subheader" class="jarallax text-light">
       <img src="images/background/2.jpg" class="jarallax-img" alt="">
       <div class="center-y relative text-center">
@@ -179,64 +283,109 @@
         </div>
       </div>
     </section>
-    <!-- section close -->
 
-    <!-- Pricing Plan Cards Section -->
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-5 bg-light">
-      <div class="container text-center">
-        <h2 class="mb-4">Pricing</h2>
+    <section id="pricing" class="py-5">
+      <div class="container">
+        <h2 class="section-heading">Choose the Perfect Plan for You</h2>
+        <p class="text-center mb-5">We offer three flexible plans designed to cater to various needs and budgets. Whether you're an individual looking for an entry-level EV or a business seeking a fleet of vehicles, our plans are designed to provide value, performance, and convenience.</p>
+
+        <div class="row justify-content-center pricing-row">
+          <!-- Basic Plan -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="pricing-card">
+              <h3>Basic Plan</h3>
+              <div class="price">₹XXX,XXX</div>
+              <p>Perfect for individuals who want to experience electric mobility.</p>
+              <ul>
+                <li>1 Electric Vehicle of your choice</li>
+                <li>Free home delivery within the city</li>
+                <li>1-year comprehensive warranty</li>
+                <li>Free consultation (30 minutes)</li>
+                <li>Basic support during the first 6 months</li>
+              </ul>
+              <p class="ideal-for">Ideal For: First-time EV buyers, Short-term users looking for a basic EV experience</p>
+              <a href="#" class="btn-main">Choose Plan</a>
+            </div>
+          </div>
+
+          <!-- Pro Plan -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="pricing-card">
+              <h3>Pro Plan</h3>
+              <div class="price">₹XXX,XXX</div>
+              <p>Designed for those who want enhanced features and better value.</p>
+              <ul>
+                <li>1 Premium Electric Vehicle of your choice</li>
+                <li>Free home delivery and setup</li>
+                <li>2-year comprehensive warranty</li>
+                <li>Free consultation (1 hour)</li>
+                <li>24/7 customer support</li>
+                <li>Free charging at partner stations for 3 months</li>
+                <li>Extended warranty options available</li>
+              </ul>
+              <p class="ideal-for">Ideal For: Tech-savvy individuals looking for performance and value, Families or businesses seeking a more reliable and feature-rich EV</p>
+              <a href="#" class="btn-main">Choose Plan</a>
+            </div>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="pricing-card">
+              <h3>Enterprise Plan</h3>
+              <div class="price">₹XXX,XXX</div>
+              <p>Tailored for businesses or large organizations needing fleet solutions.</p>
+              <ul>
+                <li>Multiple Electric Vehicles (customizable fleet size)</li>
+                <li>Priority delivery and setup</li>
+                <li>3-year comprehensive warranty</li>
+                <li>Free consultations (2 hours)</li>
+                <li>Full support for fleet management and operations</li>
+                <li>Complimentary charging at partner stations for 6 months</li>
+                <li>Exclusive discounts on maintenance and service packages</li>
+                <li>Access to customized EV solutions and reports</li>
+              </ul>
+              <p class="ideal-for">Ideal For: Businesses with large fleets, Organizations committed to sustainability and green transportation, Corporates looking to offer EVs to employees or as part of their eco-friendly initiatives</p>
+              <a href="#" class="btn-main">Choose Plan</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Financing Options -->
         <div class="row justify-content-center">
-          <!-- Tile 1 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">Basic Plan</h5>
-                <h6 class="card-price">$9.99<span class="period">/mo</span></h6>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>Feature A</li>
-                  <li>Feature B</li>
-                  <li>Feature C</li>
-                </ul>
-                <a href="#" class="btn btn-primary">Choose Plan</a>
-              </div>
-            </div>
-          </div>
-          <!-- Tile 2 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm border-primary">
-              <div class="card-body">
-                <h5 class="card-title">Pro Plan</h5>
-                <h6 class="card-price">$19.99<span class="period">/mo</span></h6>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>Feature D</li>
-                  <li>Feature E</li>
-                  <li>Feature F</li>
-                </ul>
-                <a href="#" class="btn btn-primary">Choose Plan</a>
-              </div>
-            </div>
-          </div>
-          <!-- Tile 3 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <h5 class="card-title">Enterprise Plan</h5>
-                <h6 class="card-price">$29.99<span class="period">/mo</span></h6>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>Feature G</li>
-                  <li>Feature H</li>
-                  <li>Feature I</li>
-                </ul>
-                <a href="#" class="btn btn-primary">Choose Plan</a>
-              </div>
+          <div class="col-lg-8">
+            <div class="financing-card">
+              <h3>Flexible Financing Options</h3>
+              <p>We understand that electric vehicles are a significant investment, so we offer flexible financing options for all our plans:</p>
+              <ul>
+                <li>Zero Down Payment</li>
+                <li>Flexible Loan Terms</li>
+                <li>Low Interest Rates Starting at X%</li>
+              </ul>
+              <a href="#" class="btn-main">Learn More</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-
+    <!-- Call-to-Action -->
+    <section id="section-call-to-action" class="bg-color-2 pt60 pb60 text-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2 class="s2">Ready to Choose Your Plan?</h2>
+            <p>Start your electric journey today with the plan that best suits your needs. Whether you're an individual or a business, we have the perfect EV solution for you.</p>
+          </div>
+          <div class="col-lg-6 text-lg-center text-sm-center">
+            <div class="cta-buttons">
+              <a href="pricing.html">Browse Our EVs</a>
+              <a href="#">Get a Quote</a>
+              <a href="contact.html">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- content close -->
 
     <a href="#" id="back-to-top"></a>
@@ -251,10 +400,9 @@
               <p>+91-XXXXXXXXXX</p>
               <p>contact@evehicle.com</p>
               <p>123 Green Avenue, Bengaluru, India</p>
-              <p></p>Let’s Talk Electric!</p>
+              <p>Let’s Talk Electric!</p>
             </div>
           </div>
-
           <div class="col-md-4 col-lg-3">
             <div class="widget">
               <h5>Quick Links</h5>
@@ -267,7 +415,6 @@
               </ul>
             </div>
           </div>
-
           <div class="col-md-4 col-lg-3">
             <div class="widget">
               <h5>Social Network</h5>
@@ -282,8 +429,7 @@
           </div>
         </div>
       </div>
-
-      <div class="subfooter  text-center py-3 mt-4">
+      <div class="subfooter text-center py-3 mt-4">
         <div class="container">
           <p class="mb-0 small">
             © Copyright. Designed by E-vehicle Technologies
@@ -292,15 +438,10 @@
       </div>
     </footer>
     <!-- footer close -->
-
   </div>
 
-
-  <!-- Javascript Files
-    ================================================== -->
+  <!-- Javascript Files -->
   <script src="js/plugins.js"></script>
   <script src="js/designesia.js"></script>
-
 </body>
-
 </html>
