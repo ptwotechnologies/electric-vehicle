@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+  <title>Rentaly - Services</title>
+  <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Rentaly - Multipurpose Vehicle Car Rental Website Template" name="description">
+  <meta content="" name="keywords">
+  <meta content="" name="author">
+  <!-- CSS Files -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+  <link href="css/mdb.min.css" rel="stylesheet" type="text/css" id="mdb">
+  <link href="css/plugins.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/coloring.css" rel="stylesheet" type="text/css">
+  <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      background-color: #f8fafc;
+    }
+    .de-box {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      margin-bottom: 50px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .de-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+    .section-heading {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: #1a1a1a;
+      position: relative;
+    }
+    .section-heading::after {
+      content: '';
+      width: 50px;
+      height: 3px;
+      background: #28a745;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+    }
+    .section-heading.center::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    ul.features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    ul.features li {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+    }
+    ul.features li::before {
+      content: '✔';
+      color: #28a745;
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+    .btn-main {
+      background: linear-gradient(135deg, #28a745, #34c759);
+      color: #fff;
+      padding: 14px 35px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-main:hover {
+      background: linear-gradient(135deg, #218838, #2db84c);
+      transform: scale(1.05);
+    }
+    .de_count {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .de_count:hover {
+      transform: translateY(-5px);
+    }
+    .de_count h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #28a745;
+      margin-bottom: 10px;
+    }
+    .de_count p {
+      font-size: 1rem;
+      color: #555;
+      margin: 0;
+    }
+    .testimonial-carousel {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 50px;
+    }
+    .testimonial-slide {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .testimonial-slide.active {
+      display: block;
+    }
+    .testimonial-slide p {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .testimonial-slide .author {
+      font-weight: 600;
+      color: #1a1a1a;
+      font-size: 1rem;
+    }
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+    .carousel-controls button {
+      background: rgba(255, 255, 255, 0.95);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .carousel-controls button:hover {
+      background: #28a745;
+      color: #fff;
+    }
+    #section-call-to-action {
+      background: linear-gradient(135deg, #28a745, #1e7e34);
+      padding: 60px 0;
+      margin-bottom: 0;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    #section-call-to-action h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    #section-call-to-action p {
+      color: #f0f0f0;
+      font-size: 1.1rem;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 25px;
+    }
+    .cta-buttons a {
+      background: linear-gradient(135deg, #28a745, #34c759);
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .cta-buttons a:hover {
+      background: linear-gradient(135deg, #218838, #2db84c);
+      transform: scale(1.05);
+    }
+    .nav-pills .nav-link {
+      background: #f5f5f5;
+      color: #333;
+      border-radius: 8px;
+      margin-right: 10px;
+      transition: background 0.3s ease;
+    }
+    .nav-pills .nav-link.active {
+      background: #28a745;
+      color: #fff;
+    }
+    .tab-content {
+      margin-top: 20px;
+    }
+    .tab-content p {
+      font-size: 1.05rem;
+      color: #555;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <!-- page preloader begin -->
+    <div id="de-preloader"></div>
+    <!-- page preloader close -->
+
+    <!-- header begin -->
+    <header class="transparent scroll-light has-topbar">
+      <div id="topbar" class="topbar-dark text-light">
+        <div class="container">
+          <div class="topbar-left xs-hide">
+            <div class="topbar-widget">
+              <div class="topbar-widget"><a href="#"><i class="fa fa-phone"></i>+91 8766270884</a></div>
+              <div class="topbar-widget"><a href="#"><i class="fa fa-envelope"></i>contact@evehicle.com</a></div>
+              <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>Mon - Fri 08.00 - 18.00</a></div>
+            </div>
+          </div>
+          <div class="topbar-right">
+            <div class="social-icons">
+              <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+              <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+              <a href="#"><i class="fa fa-youtube fa-lg"></i></a>
+              <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
+              <a href="#"><i class="fa fa-instagram fa-lg"></i></a>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="de-flex sm-pt10">
+              <div class="de-flex-col">
+                <div class="de-flex-col">
+                  <!-- logo begin -->
+                  <div id="logo">
+                    <a class="menu-item" href="index-3.html">LOGO</a>
+                  </div>
+                  <!-- logo close -->
+                </div>
+              </div>
+              <div class="de-flex-col header-col-mid">
+                <ul id="mainmenu">
+                  <li><a class="menu-item" href="#">Home</a></li>
+                  <li><a class="menu-item" href="about.html">About</a></li>
+                  <li><a class="menu-item" href="services.html">Service</a></li>
+                  <li><a class="menu-item" href="pricing.html">Pricing</a></li>
+                  <li><a class="menu-item" href="contact.html">Contact</a></li>
+                </ul>
+              </div>
+              <div class="de-flex-col">
+                <div class="menu_side_area">
+                  <a href="login.html" class="btn-main">Sign In</a>
+                  <span id="menu-btn"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- header close -->
+
+    <!-- content begin -->
+    <div class="no-bottom no-top zebra" id="content">
+      <div id="top"></div>
+
+      <!-- section begin -->
+      <section id="subheader" class="jarallax text-light">
+        <img src="images/background/subheader.jpg" class="jarallax-img" alt="">
+        <div class="center-y relative text-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h1>Our Services</h1>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section close -->
+
+      <section>
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-lg-6 wow fadeInRight">
+              <h2>We provide a comprehensive <span class="id-color">electric vehicle experience</span> for all your needs.</h2>
+            </div>
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay=".25s">
+              <p>At eVehicle, we are committed to offering a seamless and comprehensive electric vehicle experience. Whether you're looking to purchase, book a test drive, or receive expert consultation, we provide tailored services to help you transition to a greener future with ease.</p>
+            </div>
+          </div>
+          <div class="spacer-double"></div>
+          <div class="row text-center">
+            <div class="col-md-3 col-sm-6 mb-sm-30">
+              <div class="de_count wow fadeInUp" data-bgcolor="#f5f5f5">
+                <h3 class="timer" data-to="5000" data-speed="3000">0</h3>
+                <p>EVs Sold</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-sm-30">
+              <div class="de_count wow fadeInUp" data-bgcolor="#f5f5f5">
+                <h3 class="timer" data-to="10000" data-speed="3000">0</h3>
+                <p>Happy Customers</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-sm-30">
+              <div class="de_count wow fadeInUp" data-bgcolor="#f5f5f5">
+                <h3 class="timer" data-to="200" data-speed="3000">0</h3>
+                <p>Test Drives</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-sm-30">
+              <div class="de_count wow fadeInUp" data-bgcolor="#f5f5f5">
+                <h3 class="timer" data-to="10" data-speed="3000">0</h3>
+                <p>Years in EV</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <!-- Direct EV Purchase -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="de-box">
+                <h2 class="section-heading">Buy Your Electric Vehicle with Confidence</h2>
+                <p>Choosing to drive electric is one of the best decisions you can make for both your wallet and the planet. We offer a wide selection of electric vehicles, from budget-friendly options to high-performance models. With transparent pricing and a user-friendly buying process, purchasing your next vehicle has never been easier.</p>
+                <ul class="features">
+                  <li>Browse through a range of electric vehicle models.</li>
+                  <li>Access detailed specifications and pricing information.</li>
+                  <li>Enjoy a hassle-free purchase with professional guidance from our team.</li>
+                  <li>Financing options available for easy ownership.</li>
+                </ul>
+                <a href="pricing.html" class="btn-main">Explore EVs</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Easy Booking -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="de-box">
+                <h2 class="section-heading">Book a Test Drive or Rent an EV</h2>
+                <p>Curious about the electric driving experience? Schedule a test drive with just a few clicks and experience firsthand the performance and benefits of an electric vehicle. Alternatively, if you're looking for flexibility, we also offer rental options to suit your needs. Whether you need a vehicle for a day or a month, booking has never been easier.</p>
+                <ul class="features">
+                  <li>Schedule a test drive at your convenience.</li>
+                  <li>Rent an EV for short-term or long-term needs.</li>
+                  <li>Flexible booking system with easy online scheduling.</li>
+                  <li>Quick confirmations and guaranteed availability.</li>
+                </ul>
+                <a href="booking.html" class="btn-main">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Electric Consultation -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="de-box">
+                <h2 class="section-heading">Expert Consultation for Your EV Journey</h2>
+                <p>Not sure which electric vehicle is right for you? Our expert consultants are here to guide you through every step. From vehicle selection to understanding the best charging solutions, we offer personalized advice tailored to your driving habits, budget, and sustainability goals.</p>
+                <ul class="features">
+                  <li>One-on-one consultations to match you with the perfect EV.</li>
+                  <li>In-depth discussions on charging infrastructure and cost-saving tips.</li>
+                  <li>Assistance with government incentives and rebates available for EV purchases.</li>
+                  <li>Long-term maintenance and service advice for your EV.</li>
+                </ul>
+                <a href="contact.html" class="btn-main">Schedule Consultation</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Environment-Friendly Solutions -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="de-box">
+                <h2 class="section-heading">Drive Green, Live Green</h2>
+                <p>At eVehicle, our commitment goes beyond just providing electric vehicles—we are passionate about fostering a greener, cleaner future. By choosing an electric vehicle, you’re making a conscious decision to reduce your carbon footprint, eliminate air pollution, and contribute to a healthier planet.</p>
+                <ul class="features">
+                  <li>A commitment to sustainability in everything we do.</li>
+                  <li>Encourage eco-friendly choices with every vehicle sold and rented.</li>
+                  <li>Continuous education on reducing your environmental impact.</li>
+                  <li>Support for sustainable infrastructure and green transportation initiatives.</li>
+                </ul>
+                <a href="about.html" class="btn-main">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section-img-with-tab">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-5 offset-lg-7">
+              <h2 class="section-heading center">The eVehicle Advantage</h2>
+              <div class="spacer-20"></div>
+              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-range-tab" data-bs-toggle="pill" data-bs-target="#pills-range" type="button" role="tab" aria-controls="pills-range" aria-selected="true">Wide Range</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-consultation-tab" data-bs-toggle="pill" data-bs-target="#pills-consultation" type="button" role="tab" aria-controls="pills-consultation" aria-selected="false">Consultation</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-support-tab" data-bs-toggle="pill" data-bs-target="#pills-support" type="button" role="tab" aria-controls="pills-support" aria-selected="false">Support</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-range" role="tabpanel" aria-labelledby="pills-range-tab">
+                  <p>We offer a wide range of electric vehicles, from budget-friendly models to high-performance EVs, ensuring you find the perfect fit for your needs and lifestyle.</p>
+                </div>
+                <div class="tab-pane fade" id="pills-consultation" role="tabpanel" aria-labelledby="pills-consultation-tab">
+                  <p>Our personalized consultation services help you choose the right EV, understand charging solutions, and maximize government incentives for a seamless transition.</p>
+                </div>
+                <div class="tab-pane fade" id="pills-support" role="tabpanel" aria-labelledby="pills-support-tab">
+                  <p>Enjoy ongoing support and education on EV ownership, including maintenance tips and sustainability practices, to make your EV journey rewarding.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="image-container col-md-6 pull-right" data-bgimage="url(images/background/15.jpg) center"></div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+              <h2 class="section-heading center">What Our Customers Say</h2>
+              <div class="spacer-20"></div>
+              <div class="testimonial-carousel">
+                <div class="testimonial-slide active">
+                  <p>"The entire process with eVehicle was straightforward, and the team helped me select the perfect EV for my lifestyle."</p>
+                  <div class="author">— Happy Customer</div>
+                </div>
+                <div class="testimonial-slide">
+                  <p>"I never imagined switching to an electric vehicle could be so easy and enjoyable. eVehicle made it all happen!"</p>
+                  <div class="author">— Satisfied Client</div>
+                </div>
+                <div class="carousel-controls">
+                  <button class="prev">←</button>
+                  <button class="next">→</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section-call-to-action" class="bg-color-2 pt60 pb60 text-light">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <h2 class="s2">Ready to Make the Switch to Electric?</h2>
+              <p>Whether you’re ready to purchase, book a test drive, or need expert advice, eVehicle is here to guide you every step of the way.</p>
+            </div>
+            <div class="col-lg-6 text-lg-center text-sm-center">
+              <div class="cta-buttons">
+                <a href="pricing.html">Browse Our EVs</a>
+                <a href="booking.html">Book a Test Drive</a>
+                <a href="contact.html">Get Expert Consultation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- content close -->
+
+    <a href="#" id="back-to-top"></a>
+
+    <!-- footer begin -->
+    <footer class="text-light bg-dark pt-5">
+      <div class="container px-lg-5">
+        <div class="row gx-5 gy-4 justify-content-evenly text-start text-md-start">
+          <div class="col-md-4 col-lg-3">
+            <div class="widget">
+              <h5>About Us</h5>
+              <p>+91-XXXXXXXXXX</p>
+              <p>contact@evehicle.com</p>
+              <p>123 Green Avenue, Bengaluru, India</p>
+              <p>Let’s Talk Electric!</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <div class="widget">
+              <h5>Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <div class="widget">
+              <h5>Social Network</h5>
+              <div class="social-icons d-flex gap-3">
+                <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
+                <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
+                <a href="#"><i class="fa fa-rss fa-lg"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="subfooter text-center py-3 mt-4">
+        <div class="container">
+          <p class="mb-0 small">
+            © Copyright. Designed by E-vehicle Technologies
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- footer close -->
+  </div>
+
+  <!-- Javascript Files -->
+  <script src="js/plugins.js"></script>
+  <script src="js/designesia.js"></script>
+  <script>
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevButton = document.querySelector('.carousel-controls .prev');
+    const nextButton = document.querySelector('.carousel-controls .next');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    prevButton.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    nextButton.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    // Auto-slide every 5 seconds
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 5000);
+  </script>
+</body>
+</html>
