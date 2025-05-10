@@ -2,27 +2,344 @@
 <html lang="zxx">
 
 <head>
-    <title>Rentaly - Multipurpose Vehicle Car Rental Website Template</title>
+    <title>Rentaly - About Us</title>
     <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Rentaly - Multipurpose Vehicle Car Rental Website Template" name="description">
     <meta content="" name="keywords">
     <meta content="" name="author">
-    <!-- CSS Files
-    ================================================== -->
+    <!-- CSS Files -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
     <link href="css/mdb.min.css" rel="stylesheet" type="text/css" id="mdb">
     <link href="css/plugins.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/coloring.css" rel="stylesheet" type="text/css">
-    <!-- color scheme -->
     <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #f8fafc;
+        }
+
+        .de-box {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .de-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .vision-journey-card {
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #28a745;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .vision-journey-card:hover {
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(30, 126, 52, 0.1));
+        }
+
+        .section-heading {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            position: relative;
+        }
+
+        .section-heading::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background: #28a745;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+        }
+
+        .section-heading.center {
+            text-align: center;
+        }
+
+        .section-heading.center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btn-main {
+            background: linear-gradient(135deg, #28a745, #34c759);
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-main:hover {
+            background: linear-gradient(135deg, #218838, #2db84c);
+            transform: scale(1.05);
+        }
+
+        .de_count {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .de_count:hover {
+            transform: translateY(-5px);
+        }
+
+        .de_count h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .de_count p {
+            font-size: 1rem;
+            color: #555;
+            margin: 0;
+        }
+
+        .f-profile {
+            transition: transform 0.3s ease;
+        }
+
+        .f-profile:hover {
+            transform: translateY(-8px);
+        }
+
+        .f-profile h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .f-profile p {
+            font-size: 0.9rem;
+            color: #ddd;
+            margin: 5px 0 0;
+        }
+
+        .f-profile .fp-image {
+            max-height: 150px;
+            object-fit: cover;
+        }
+
+        .testimonial-carousel {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+
+        .testimonial-slide {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+        }
+
+        .testimonial-slide p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-slide .author {
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 1rem;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-controls button {
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-controls button:hover {
+            background: #28a745;
+            color: #fff;
+        }
+
+        #section-call-to-action {
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+            padding: 60px 0;
+            margin-bottom: 0;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        #section-call-to-action h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        #section-call-to-action p {
+            color: #f0f0f0;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .cta-buttons a {
+            background: linear-gradient(135deg, #28a745, #34c759);
+            color: #fff;
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-buttons a:hover {
+            background: linear-gradient(135deg, #218838, #2db84c);
+            transform: scale(1.05);
+        }
+
+        .nav-pills {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nav-pills .nav-link {
+            background: #f5f5f5;
+            color: #333;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: left;
+            padding: 12px 20px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-pills .nav-link.active {
+            background: #28a745;
+            color: #fff;
+        }
+
+        .tab-content {
+            margin-top: 0;
+            padding: 20px;
+            word-wrap: break-word;
+            max-width: 100%;
+        }
+
+        .tab-content p {
+            font-size: 1.05rem;
+            color: #555;
+            margin: 0;
+        }
+
+        #banner {
+            position: relative;
+            padding: 150px 0 60px 0;
+        }
+
+        #banner .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        #banner h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        #banner p {
+            font-size: 1.2rem;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        @media (max-width: 991px) {
+            .nav-pills {
+                align-items: center;
+            }
+
+            .nav-pills .nav-link {
+                text-align: center;
+            }
+
+            .tab-content {
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div id="wrapper">
-        
         <!-- page preloader begin -->
         <div id="de-preloader"></div>
         <!-- page preloader close -->
@@ -34,11 +351,12 @@
                     <div class="topbar-left xs-hide">
                         <div class="topbar-widget">
                             <div class="topbar-widget"><a href="#"><i class="fa fa-phone"></i>+91-XXXXXXXXXX</a></div>
-                            <div class="topbar-widget"><a href="#"><i class="fa fa-envelope"></i>contact@evehicle.com</a></div>
-                            <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>Mon - Fri 08.00 - 18.00</a></div>
+                            <div class="topbar-widget"><a href="#"><i
+                                        class="fa fa-envelope"></i>contact@evehicle.com</a></div>
+                            <div class="topbar-widget"><a href="#"><i class="fa fa-clock-o"></i>Mon - Fri 08.00 -
+                                    18.00</a></div>
                         </div>
                     </div>
-                
                     <div class="topbar-right">
                         <div class="social-icons">
                             <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
@@ -47,7 +365,7 @@
                             <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
                             <a href="#"><i class="fa fa-instagram fa-lg"></i></a>
                         </div>
-                    </div>  
+                    </div>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -57,98 +375,20 @@
                         <div class="de-flex sm-pt10">
                             <div class="de-flex-col">
                                 <div class="de-flex-col">
-                                   <!-- logo begin -->
-                  <div id="logo">
-                    <a class="menu-item" href="#">LOGO</a>
-                  </div>
-                  <!-- logo close -->
+                                    <!-- logo begin -->
+                                    <div id="logo">
+                                        <a class="menu-item" href="index.html">LOGO</a>
+                                    </div>
+                                    <!-- logo close -->
                                 </div>
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <ul id="mainmenu">
-                                    <li><a class="menu-item" href="index.html">Home</a>
-                                        
-                                    </li>
-                                    <!-- <li><a class="menu-item" href="pricing.html">Cars</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="pricing.html">Cars List 1</a></li>
-                                            <li><a class="menu-item" href="02_dark-pricing.html">Cars List 1 Dark</a></li>
-                                            <li><a class="menu-item" href="cars-list.html">Cars List 2</a></li>
-                                            <li><a class="menu-item" href="02_dark-cars-list.html">Cars List 2 Dark</a></li>
-                                            <li><a class="menu-item" href="car-single.html">Cars Single</a></li>
-                                            <li><a class="menu-item" href="02_dark-car-single.html">Cars Single Dark</a></li>
-                                        </ul>
-                                    </li> -->
-                                    <li>
-                                        <a class="menu-item" href="about.html">About</a>
-                                    </li>
-                                    <li>
-                                        <a class="menu-item" href="services.html">Service</a>
-                                    </li>
-                                    <li>
-                                        <a class="menu-item" href="pricing.html">Pricing</a>
-                                    </li>
-                                    <li>
-                                        <a class="menu-item" href="contact.html">Contact</a>
-                                    </li>
-                                    <!-- <li><a class="menu-item" href="quick-booking.html">Booking</a>
-                                        <ul>
-                                            <li><a class="menu-item new" href="quick-booking.html">Quick Booking</a></li>
-                                            <li><a class="menu-item" href="booking.html">Booking</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="account-dashboard.html">My Account</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="account-dashboard.html">Dashboard</a></li>
-                                            <li><a class="menu-item" href="account-profile.html">My Profile</a></li>
-                                            <li><a class="menu-item" href="account-booking.html">My Orders</a></li>
-                                            <li><a class="menu-item" href="account-favorite.html">My Favorite Cars</a></li>
-                                        </ul>
-                                    </li> -->
-                                    <!-- <li><a class="menu-item" href="#">Pages</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="about.html">About Us</a></li>
-                                            <li><a class="menu-item" href="contact.html">Contact</a></li>
-                                            <li><a class="menu-item" href="login.html">Login</a></li>
-                                            <li><a class="menu-item" href="register.html">Register</a></li>
-                                            <li><a class="menu-item" href="404.html">Page 404</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="#">News</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="news-standart-right-sidebar.html">News Standard</a>
-                                                <ul>
-                                                    <li><a class="menu-item" href="news-standart-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a class="menu-item" href="news-standart-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a class="menu-item" href="news-standart-no-sidebar.html">No Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a class="menu-item" href="news-grid-right-sidebar.html">News Grid</a>
-                                                <ul>
-                                                    <li><a class="menu-item" href="news-grid-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a class="menu-item" href="news-grid-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a class="menu-item" href="news-grid-no-sidebar.html">No Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="#">Elements</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="preloader.html">Preloader</a></li>
-                                            <li><a class="menu-item" href="icon-boxes.html">Icon Boxes</a></li>
-                                            <li><a class="menu-item" href="badge.html">Badge</a></li>
-                                            <li><a class="menu-item" href="counters.html">Counters</a></li>
-                                            <li><a class="menu-item" href="gallery-popup.html">Gallery Popup</a></li>
-                                            <li><a class="menu-item" href="icons-elegant.html">Icons Elegant</a></li>
-                                            <li><a class="menu-item" href="icons-etline.html">Icons Etline</a></li>
-                                            <li><a class="menu-item" href="icons-font-awesome.html">Icons Font Awesome</a></li>
-                                            <li><a class="menu-item" href="map.html">Map</a></li>
-                                            <li><a class="menu-item" href="modal.html">Modal</a></li>
-                                            <li><a class="menu-item" href="popover.html">Popover</a></li>
-                                            <li><a class="menu-item" href="tabs.html">Tabs</a></li>
-                                            <li><a class="menu-item" href="tooltips.html">Tooltips</a></li>
-                                        </ul>
-                                    </li> -->
+                                    <li><a class="menu-item" href="index.html">Home</a></li>
+                                    <li><a class="menu-item" href="about.html">About</a></li>
+                                    <li><a class="menu-item" href="services.html">Service</a></li>
+                                    <li><a class="menu-item" href="pricing.html">Pricing</a></li>
+                                    <li><a class="menu-item" href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
                             <div class="de-flex-col">
@@ -163,66 +403,79 @@
             </div>
         </header>
         <!-- header close -->
+
         <!-- content begin -->
         <div class="no-bottom no-top zebra" id="content">
             <div id="top"></div>
-            
-            <!-- section begin -->
-            <section id="subheader" class="jarallax text-light">
+
+            <!-- Banner Section -->
+            <section id="banner" class="jarallax text-light">
                 <img src="images/background/subheader.jpg" class="jarallax-img" alt="">
-                    <div class="center-y relative text-center">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 text-center">
-									<h1>About Us</h1>
+                <div class="center-y relative text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h1>Empowering the Future of Transportation with Electric Vehicles</h1>
+                                <p>At eVehicle, we are leading the charge towards sustainable mobility, providing
+                                    accessible, efficient, and eco-friendly electric vehicle solutions for everyone.</p>
+                                <div class="cta-buttons">
+                                    <a href="#mission" class="btn-main">Learn More</a>
+                                    <a href="pricing.html" class="btn-main">Explore Our EVs</a>
                                 </div>
-                                <div class="clearfix"></div>
                             </div>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
+                </div>
             </section>
-            <!-- section close -->
 
-            <section>
+            <!-- Our Mission -->
+            <section id="mission">
                 <div class="container">
                     <div class="row g-5">
                         <div class="col-lg-6 wow fadeInRight">
-                            <h2>We offer customers a wide range of <span class="id-color">commercial cars</span> and <span class="id-color">luxury cars</span> for any occasion.</h2>
+                            <h2>Our Mission to Drive <span class="id-color">Sustainable Mobility</span></h2>
                         </div>
                         <div class="col-lg-6 wow fadeInRight" data-wow-delay=".25s">
-                            Lorem ipsum non aliquip esse do eu ad amet laboris do labore reprehenderit mollit exercitation cillum irure fugiat magna laboris aliquip adipisicing consectetur officia dolor minim ea enim amet in ut non non excepteur anim magna dolor nostrud commodo qui irure deserunt adipisicing nisi ex nostrud sunt officia in aliquip velit anim id aliqua qui do sed non ad qui sed in eu in aliqua sunt pariatur occaecat in ullamco deserunt dolor consectetur laborum non duis occaecat nulla ut sed qui sunt id ex sint sed eu excepteur minim nulla minim excepteur exercitation.
+                            <p>At eVehicle, our mission is to accelerate the adoption of electric vehicles and make
+                                sustainable transportation accessible to all. We strive to provide our customers with a
+                                seamless and enjoyable experience, whether they are buying, renting, or simply learning
+                                about electric vehicles. Through expert consultation, a wide range of EVs, and an
+                                unwavering commitment to the environment, we aim to be the go-to platform for electric
+                                mobility.</p>
                         </div>
                     </div>
                     <div class="spacer-double"></div>
                     <div class="row text-center">
                         <div class="col-md-3 col-sm-6 mb-sm-30">
                             <div class="de_count wow fadeInUp" data-bgcolor="#f5f5f5">
-                                <h3 class="timer" data-to="15425" data-speed="3000">0</h3>
-                                Completed Orders
+                                <h3 class="timer" data-to="5000" data-speed="3000">0</h3>
+                                <p>EVs Sold</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 mb-sm-30">
                             <div class="de_count wow fadeInUp" data-bgcolor="#f5f5f5">
-                                <h3 class="timer" data-to="8745" data-speed="3000">0</h3>
-                                Happy Customers
+                                <h3 class="timer" data-to="10000" data-speed="3000">0</h3>
+                                <p>Happy Customers</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 mb-sm-30">
                             <div class="de_count wow fadeInUp" data-bgcolor="#f5f5f5">
-                                <h3 class="timer" data-to="235" data-speed="3000">0</h3>
-                                Vehicles Fleet
+                                <h3 class="timer" data-to="200" data-speed="3000">0</h3>
+                                <p>Test Drives</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 mb-sm-30">
                             <div class="de_count wow fadeInUp" data-bgcolor="#f5f5f5">
-                                <h3 class="timer" data-to="15" data-speed="3000">0</h3>
-                                Years Experience
+                                <h3 class="timer" data-to="10" data-speed="3000">0</h3>
+                                <p>Years in EV</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- Board of Directors -->
             <section aria-label="section" class="jarallax text-light">
                 <img src="images/background/8.jpg" class="jarallax-img" alt="">
                 <div class="container">
@@ -232,140 +485,149 @@
                             <div class="spacer-20"></div>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 col-sm-6 mb30">
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb30">
                             <div class="f-profile text-center">
                                 <div class="fp-wrap f-invert">
-                                    <div class="fpw-overlay">
-                                        <div class="fpwo-wrap">
-                                            <div class="fpwow-icons">
-                                                <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                                <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
-                                                <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>                                  
                                     <div class="fpw-overlay-btm"></div>
                                     <img src="images/team/1.jpg" class="fp-image img-fluid" alt="">
                                 </div>
-
-                                <h4>Fynley Wilkinson</h4>
-                                Chief Creative Officer
+                                <h4>Tapan</h4>
+                                <p>Founder & CEO</p>
                             </div>
                         </div>
-                        
-                        <div class="col-lg-3 col-md-6 col-sm-6 mb30">
+
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb30">
                             <div class="f-profile text-center">
                                 <div class="fp-wrap f-invert">
-                                    <div class="fpw-overlay">
-                                        <div class="fpwo-wrap">
-                                            <div class="fpwow-icons">
-                                                <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                                <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
-                                                <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>                                  
                                     <div class="fpw-overlay-btm"></div>
                                     <img src="images/team/2.jpg" class="fp-image img-fluid" alt="">
                                 </div>
-
-                                <h4>Peter Welsh</h4>
-                                Chief Technology Officer
+                                <h4>Name Placeholder</h4>
+                                <p>Chief Technology Officer</p>
                             </div>
                         </div>
-                        
-                        <div class="col-lg-3 col-md-6 col-sm-6 mb30">
+
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb30">
                             <div class="f-profile text-center">
                                 <div class="fp-wrap f-invert">
-                                    <div class="fpw-overlay">
-                                        <div class="fpwo-wrap">
-                                            <div class="fpwow-icons">
-                                                <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                                <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
-                                                <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>                                  
                                     <div class="fpw-overlay-btm"></div>
                                     <img src="images/team/3.jpg" class="fp-image img-fluid" alt="">
                                 </div>
-
-                                <h4>John Shepard</h4>
-                                Chief Executive Officer
+                                <h4>Name Placeholder</h4>
+                                <p>Chief Operating Officer</p>
                             </div>
                         </div>
-                        
-                        <div class="col-lg-3 col-md-6 col-sm-6 mb30">
+
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb30">
                             <div class="f-profile text-center">
                                 <div class="fp-wrap f-invert">
-                                    <div class="fpw-overlay">
-                                        <div class="fpwo-wrap">
-                                            <div class="fpwow-icons">
-                                                <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                                <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
-                                                <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>                                  
                                     <div class="fpw-overlay-btm"></div>
                                     <img src="images/team/4.jpg" class="fp-image img-fluid" alt="">
                                 </div>
-
-                                <h4>Robyn Peel</h4>
-                                Director of Finance
+                                <h4>Name Placeholder</h4>
+                                <p>Marketing Director</p>
                             </div>
                         </div>
 
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb30">
+                            <div class="f-profile text-center">
+                                <div class="fp-wrap f-invert">
+                                    <div class="fpw-overlay-btm"></div>
+                                    <img src="images/team/1.jpg" class="fp-image img-fluid" alt="">
+                                </div>
+                                <h4>Name Placeholder</h4>
+                                <p>Sales Director</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb30">
+                            <div class="f-profile text-center">
+                                <div class="fp-wrap f-invert">
+                                    <div class="fpw-overlay-btm"></div>
+                                    <img src="images/team/2.jpg" class="fp-image img-fluid" alt="">
+                                </div>
+                                <h4>Name Placeholder</h4>
+                                <p>Chief Sustainability Officer</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section aria-label="section">
+            <!-- Vision and Journey -->
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="de-box vision-journey-card">
+                                <h2 class="section-heading">Our Vision</h2>
+                                <p>Our vision is to lead the way in the transition towards a cleaner, greener future. We
+                                    believe in a world where electric vehicles are the standard, contributing to reduced
+                                    emissions, lower pollution, and a better quality of life for all. By continually
+                                    innovating and educating people about the benefits of EVs, we aim to be at the
+                                    forefront of the electric mobility movement globally.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="de-box vision-journey-card">
+                                <h2 class="section-heading">Our Journey</h2>
+                                <p>eVehicle was founded with one goal: to revolutionize transportation by providing
+                                    innovative, eco-friendly solutions through electric vehicles. What started as a
+                                    passion project has quickly grown into a trusted platform, offering a comprehensive
+                                    EV experience, from buying to booking and consulting. Today, we continue to expand,
+                                    connecting more people with clean transportation options, and paving the way for a
+                                    sustainable future.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Values -->
+            <section>
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-6 offset-lg-3 text-center">
-                            <h2>Features Hilight</h2>
+                            <h2 class="section-heading center">Our Core Values</h2>
                             <div class="spacer-20"></div>
                         </div>
                         <div class="clearfix"></div>
                         <div class="col-lg-3">
                             <div class="box-icon s2 p-small mb20 wow fadeInRight" data-wow-delay=".5s">
-                                <i class="fa bg-color fa-trophy"></i>
+                                <i class="fa bg-color fa-leaf"></i>
                                 <div class="d-inner">
-                                    <h4>First class services</h4>
-                                    Where luxury meets exceptional care, creating unforgettable moments and exceeding your every expectation.
+                                    <h4>Sustainability</h4>
+                                    <p>We are committed to reducing carbon emissions and supporting the global shift to
+                                        cleaner transportation.</p>
                                 </div>
                             </div>
-                            <div class="box-icon s2 p-small mb20 wow fadeInL fadeInRight" data-wow-delay=".75s">
-                                <i class="fa bg-color fa-road"></i>
+                            <div class="box-icon s2 p-small mb20 wow fadeInRight" data-wow-delay=".75s">
+                                <i class="fa bg-color fa-lightbulb-o"></i>
                                 <div class="d-inner">
-                                    <h4>24/7 road assistance</h4>
-                                     Reliable support when you need it most, keeping you on the move with confidence and peace of mind.
+                                    <h4>Innovation</h4>
+                                    <p>We embrace new technologies and solutions to improve the EV experience for our
+                                        customers.</p>
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-lg-6">
                             <img src="images/misc/car.png" alt="" class="img-fluid wow fadeInUp">
                         </div>
-
                         <div class="col-lg-3">
-                            <div class="box-icon s2 d-invert p-small mb20 wow fadeInL fadeInLeft" data-wow-delay="1s">
-                                <i class="fa bg-color fa-tag"></i>
+                            <div class="box-icon s2 d-invert p-small mb20 wow fadeInLeft" data-wow-delay="1s">
+                                <i class="fa bg-color fa-user"></i>
                                 <div class="d-inner">
-                                    <h4>Quality at Minimum Expense</h4>
-                                     Unlocking affordable brilliance with elevating quality while minimizing costs for maximum value.
+                                    <h4>Customer-Centricity</h4>
+                                    <p>We put our customers first, providing personalized advice and exceptional service
+                                        every step of the way.</p>
                                 </div>
                             </div>
-                            <div class="box-icon s2 d-invert p-small mb20 wow fadeInL fadeInLeft" data-wow-delay="1.25s">
-                                <i class="fa bg-color fa-map-pin"></i>
+                            <div class="box-icon s2 d-invert p-small mb20 wow fadeInLeft" data-wow-delay="1.25s">
+                                <i class="fa bg-color fa-handshake-o"></i>
                                 <div class="d-inner">
-                                    <h4>Free Pick-Up & Drop-Off</h4>
-                                     Enjoy free pickup and drop-off services, adding an extra layer of ease to your car rental experience.
+                                    <h4>Integrity</&amp;nbsp;< /h4>
+                                        <p>We believe in offering transparent, honest, and reliable services, fostering
+                                            trust with our customers and partners.</p>
                                 </div>
                             </div>
                         </div>
@@ -375,78 +637,143 @@
 
             <section id="section-img-with-tab">
                 <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5 offset-lg-7">
-                            
-                            <h2>Only Quality For Clients</h2>
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h2 class="section-heading center">Why Choose Us?</h2>
                             <div class="spacer-20"></div>
-                            
-                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                              <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Luxury</button>
-                              </li>
-                              <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Comfort</button>
-                              </li>
-                              <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Prestige</button>
-                              </li>
-                            </ul>
-                            <div class="tab-content" id="pills-tabContent">
-                              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><p>We offer a meticulously curated collection of the most sought-after luxury vehicles on the market. Whether you prefer the sporty allure of a high-performance sports car, the sophistication of a sleek and luxurious sedan, or the versatility of a premium SUV, we have the perfect car to match your discerning taste.</p></div>
-                              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><p>We prioritize your comfort and convenience throughout your journey. We understand that a comfortable ride can make a world of difference, whether you're embarking on a business trip or enjoying a leisurely vacation. That's why we offer a wide range of well-maintained, comfortable cars that cater to your specific needs.</p></div>
-                              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"><p>We understand that prestige goes beyond luxury. It's about making a statement, embracing sophistication, and indulging in the finer things in life. That's why we offer an exclusive selection of prestigious cars that exude elegance, style, and status.</p></div>
+                        </div>
+                    </div>
+                    <div class="row align-items-start">
+                        <div class="col-lg-6 col-12">
+                            <div class="image-container"
+                                style="height: 400px; width: 100%; background-image: url('images/background/15.jpg'); background-position: center; background-size: cover; background-color: #f0f0f0; border: 1px solid #ddd; border-radius: 8px; position: relative; overflow: hidden;">
+                                <img src="images/background/15.jpg" alt="Why Choose Us Background"
+                                    style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                             </div>
-                            
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="row">
+                                <div class="col-lg-4 col-12">
+                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="pills-experience-tab"
+                                                data-bs-toggle="pill" data-bs-target="#pills-experience" type="button"
+                                                role="tab" aria-controls="pills-experience"
+                                                aria-selected="true">Complete EV Experience</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="pills-guidance-tab" data-bs-toggle="pill"
+                                                data-bs-target="#pills-guidance" type="button" role="tab"
+                                                aria-controls="pills-guidance" aria-selected="false">Expert
+                                                Guidance</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="pills-eco-tab" data-bs-toggle="pill"
+                                                data-bs-target="#pills-eco" type="button" role="tab"
+                                                aria-controls="pills-eco" aria-selected="false">Eco-Friendly</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="pills-hassle-tab" data-bs-toggle="pill"
+                                                data-bs-target="#pills-hassle" type="button" role="tab"
+                                                aria-controls="pills-hassle" aria-selected="false">Hassle-Free</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-8 col-12">
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-experience" role="tabpanel"
+                                            aria-labelledby="pills-experience-tab">
+                                            <p>We offer a comprehensive range of services, from EV purchase to test
+                                                drives and consultation.</p>
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-guidance" role="tabpanel"
+                                            aria-labelledby="pills-guidance-tab">
+                                            <p>Our knowledgeable consultants provide personalized advice to help you
+                                                make the best decision for your needs.</p>
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-eco" role="tabpanel"
+                                            aria-labelledby="pills-eco-tab">
+                                            <p>Every step we take is designed to contribute to a cleaner, more
+                                                sustainable world.</p>
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-hassle" role="tabpanel"
+                                            aria-labelledby="pills-hassle-tab">
+                                            <p>We make the process of buying or booking an EV easy, fast, and secure.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="image-container col-md-6 pull-right" data-bgimage="url(images/background/15.jpg) center"></div>
             </section>
 
-            <section id="section-call-to-action" class="bg-color-2 pt60 pb60 text-light">
+            <!-- Testimonials -->
+            <section>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-center">
+                            <h2 class="section-heading center">What Our Customers Say</h2>
+                            <div class="spacer-20"></div>
+                            <div class="testimonial-carousel">
+                                <div class="testimonial-slide active">
+                                    <p>"The experience with eVehicle was seamless! The team helped me choose the perfect
+                                        EV for my needs and made the entire process effortless."</p>
+                                    <div class="author">— Happy Customer</div>
+                                </div>
+                                <div class="testimonial-slide">
+                                    <p>"I’m proud to drive an electric vehicle thanks to eVehicle. The consultation was
+                                        informative, and the car runs like a dream!"</p>
+                                    <div class="author">— Satisfied Client</div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="prev">←</button>
+                                    <button class="next">→</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call-to-Action -->
+            <section id="section-call-to-action" class="pt60 pb60 text-light">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-lg-8">
-                            <h2 class="s2">Call us for further information. Our customer care is here to help you anytime.</h2>
+                        <div class="col-lg-6">
+                            <h2 class="s2">Join Us in Driving a Sustainable Future</h2>
+                            <p>Explore our electric vehicles, book a test drive, or contact us to learn more about how
+                                eVehicle is leading the charge towards greener transportation.</p>
                         </div>
-
-                        <div class="col-lg-4 text-lg-center text-sm-center">
-                            <div class="phone-num-big">
-                                <i class="fa fa-phone"></i>
-                                <span class="pnb-text">
-                                    Call Us Now
-                                </span>
-                                <span class="pnb-num">
-                                    91 8766270884
-                                </span>
+                        <div class="col-lg-6 text-lg-center text-sm-center">
+                            <div class="cta-buttons">
+                                <a href="pricing.html">Browse Our EVs</a>
+                                <a href="booking.html">Book a Test Drive</a>
+                                <a href="contact.html">Contact Us</a>
                             </div>
-                            <a href="#" class="btn-main">Contact Us</a>
                         </div>
                     </div>
                 </div>
             </section>
-			
         </div>
         <!-- content close -->
 
         <a href="#" id="back-to-top"></a>
-        
+
         <!-- footer begin -->
         <footer class="text-light bg-dark pt-5">
             <div class="container px-lg-5">
                 <div class="row gx-5 gy-4 justify-content-evenly text-start text-md-start">
-                     <div class="col-md-4 col-lg-3">
+                    <div class="col-md-4 col-lg-3">
                         <div class="widget">
                             <h5>About Us</h5>
                             <p>+91-XXXXXXXXXX</p>
                             <p>contact@evehicle.com</p>
                             <p>123 Green Avenue, Bengaluru, India</p>
-                            <p></p>Let’s Talk Electric!</p>
+                            <p>Let’s Talk Electric!</p>
                         </div>
                     </div>
-
                     <div class="col-md-4 col-lg-3">
                         <div class="widget">
                             <h5>Quick Links</h5>
@@ -455,11 +782,10 @@
                                 <li><a href="about.html">About us</a></li>
                                 <li><a href="services.html">Services</a></li>
                                 <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="booking.html">Contact us</a></li>
+                                <li><a href="contact.html">Contact us</a></li>
                             </ul>
                         </div>
                     </div>
-
                     <div class="col-md-4 col-lg-3">
                         <div class="widget">
                             <h5>Social Network</h5>
@@ -474,8 +800,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="subfooter  text-center py-3 mt-4">
+            <div class="subfooter text-center py-3 mt-4">
                 <div class="container">
                     <p class="mb-0 small">
                         © Copyright. Designed by E-vehicle Technologies
@@ -484,15 +809,39 @@
             </div>
         </footer>
         <!-- footer close -->
-        
     </div>
 
-
-    <!-- Javascript Files
-    ================================================== -->
+    <!-- Javascript Files -->
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
+    <script>
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const prevButton = document.querySelector('.carousel-controls .prev');
+        const nextButton = document.querySelector('.carousel-controls .next');
+        let currentSlide = 0;
 
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Auto-slide every 5 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+    </script>
 </body>
 
 </html>
